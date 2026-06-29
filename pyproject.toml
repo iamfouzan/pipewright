@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pipewright"
+version = "1.2.0"
+description = "Keep your CI pipelines fast, cheap, secure, and reliable — and fix them with a PR."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+keywords = [
+    "ci",
+    "github-actions",
+    "developer-tools",
+    "devops",
+    "pipeline",
+    "test-impact-analysis",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13",
+    "ruamel.yaml>=0.18",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[project.scripts]
+pipewright = "pipewright.cli:main"
+pw = "pipewright.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/iamfouzan/pipewright"
+Issues = "https://github.com/iamfouzan/pipewright/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pipewright"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

@@ -1,14 +1,14 @@
 """Profiler — decide how mature a pipeline is, from the YAML alone.
 
-This is what keeps pipewright from nagging a three-line workflow about
+This is what keeps ciwright from nagging a three-line workflow about
 machinery meant for a monorepo. Each rule declares the smallest tier it's
 relevant for; ``select_visible`` then shows only what fits.
 """
 
 from __future__ import annotations
 
-from pipewright.models import TIER_ORDER, Finding, ProjectInfo, Tier
-from pipewright.workflows import LoadedWorkflow, jobs_of, load_workflows
+from ciwright.models import TIER_ORDER, Finding, ProjectInfo, Tier
+from ciwright.workflows import LoadedWorkflow, jobs_of, load_workflows
 
 
 def profile(info: ProjectInfo, loaded: list[LoadedWorkflow] | None = None) -> Tier:

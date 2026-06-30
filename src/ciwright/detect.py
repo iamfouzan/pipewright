@@ -8,7 +8,7 @@ from __future__ import annotations
 import tomllib
 from pathlib import Path
 
-from pipewright.models import ProjectInfo
+from ciwright.models import ProjectInfo
 
 
 def _read_pyproject(root: Path) -> dict:

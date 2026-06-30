@@ -6,9 +6,9 @@ from pathlib import Path
 
 from ruamel.yaml import YAML
 
-from pipewright.detect import detect
-from pipewright.patch import build_patch, primary_workflow
-from pipewright.rules import analyze
+from ciwright.detect import detect
+from ciwright.patch import build_patch, primary_workflow
+from ciwright.rules import analyze
 
 _safe = YAML(typ="safe")
 

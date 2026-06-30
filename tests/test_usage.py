@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from pipewright.models import Finding, Tier
-from pipewright.usage import (
+from ciwright.models import Finding, Tier
+from ciwright.usage import (
     Run,
     estimate_savings,
     parse_runs,

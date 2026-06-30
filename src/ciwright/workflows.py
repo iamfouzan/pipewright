@@ -11,7 +11,7 @@ from pathlib import Path
 from ruamel.yaml import YAML
 from ruamel.yaml.error import YAMLError
 
-from pipewright.models import ProjectInfo
+from ciwright.models import ProjectInfo
 
 _yaml = YAML(typ="safe")
 

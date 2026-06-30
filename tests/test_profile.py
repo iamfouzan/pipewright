@@ -2,10 +2,10 @@
 
 from __future__ import annotations
 
-from pipewright.detect import detect
-from pipewright.models import Tier
-from pipewright.profile import profile, select_visible
-from pipewright.rules import analyze
+from ciwright.detect import detect
+from ciwright.models import Tier
+from ciwright.profile import profile, select_visible
+from ciwright.rules import analyze
 
 ONE_JOB = """\
 name: CI

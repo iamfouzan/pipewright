@@ -20,7 +20,7 @@ from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
 from ruamel.yaml.error import YAMLError
 
-from pipewright.models import Finding, ProjectInfo
+from ciwright.models import Finding, ProjectInfo
 
 # Rules we can apply automatically as structured YAML edits.
 AUTO_FIXABLE = {"dependency-caching", "path-filters", "cancel-superseded-runs"}

@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from pipewright.detect import detect
-from pipewright.models import Tier
-from pipewright.rules import analyze
+from ciwright.detect import detect
+from ciwright.models import Tier
+from ciwright.rules import analyze
 
 PINNED = """\
 name: CI

@@ -1,4 +1,4 @@
-"""Small, plain data containers shared across pipewright."""
+"""Small, plain data containers shared across ciwright."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from pathlib import Path
 # minutes saved without CI run history (a later feature).
 IMPACT_ORDER = {"high": 0, "medium": 1, "low": 2}
 
-# The four things pipewright watches.
+# The four things ciwright watches.
 CATEGORIES = ("speed", "cost", "security", "reliability")
 
 
@@ -27,7 +27,7 @@ TIER_ORDER = {Tier.STARTER: 0, Tier.GROWING: 1, Tier.SCALE: 2}
 
 @dataclass
 class ProjectInfo:
-    """What pipewright could figure out about a repository."""
+    """What ciwright could figure out about a repository."""
 
     root: Path
     package_manager: str | None  # "pip" | "poetry" | "pipenv" | "uv" | None

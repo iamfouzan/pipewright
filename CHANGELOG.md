@@ -9,7 +9,7 @@
   deprecated actions/runners. Added the per-category health score and `score`.
 
 ## 1.0.0
-- Renamed to pipewright. Maturity tiers (Starter/Growing/Scale) and a
+- Renamed to ciwright. Maturity tiers (Starter/Growing/Scale) and a
   four-category model (speed, cost, security, reliability). New checks: job
   timeouts, double-run dedupe, Docker layer cache.
 

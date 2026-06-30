@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from pipewright.models import Finding, Tier
-from pipewright.score import compute_score
+from ciwright.models import Finding, Tier
+from ciwright.score import compute_score
 
 
 def _f(rule_id, optimized, category):

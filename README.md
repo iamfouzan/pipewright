@@ -1,4 +1,4 @@
-# pipewright
+# ciwright
 
 > Keep your CI pipelines fast, cheap, secure, and reliable — and fix them with a PR.
 
@@ -13,30 +13,30 @@ This is **v1.2** (Python-first).
 
 ```bash
 # once published:
-uvx pipewright analyze        # or: pipx run pipewright analyze
+uvx ciwright analyze        # or: pipx run ciwright analyze
 
 # from source:
 pip install -e ".[dev]"
 ```
 
-The CLI is `pipewright`, with a short `pw` alias.
+The CLI is `ciwright`, with a short `pw` alias.
 
 ## Use
 
 ```bash
-pipewright detect        # what does pipewright see in this repo?
-pipewright score         # the CI health score, per category
-pipewright analyze       # the score + tier-relevant findings (read-only)
-pipewright usage         # real run-history stats + rough savings estimates
-pipewright fix           # preview the exact YAML changes as a diff
-pipewright fix --apply   # open the changes as a pull request (new branch, never main)
+ciwright detect        # what does ciwright see in this repo?
+ciwright score         # the CI health score, per category
+ciwright analyze       # the score + tier-relevant findings (read-only)
+ciwright usage         # real run-history stats + rough savings estimates
+ciwright fix           # preview the exact YAML changes as a diff
+ciwright fix --apply   # open the changes as a pull request (new branch, never main)
 ```
 
 `usage` reads run history from the GitHub CLI (`gh`) or a JSON file:
 
 ```bash
 gh api repos/OWNER/NAME/actions/runs > runs.json
-pipewright usage --from-file runs.json
+ciwright usage --from-file runs.json
 ```
 
 ## The health score
@@ -79,7 +79,7 @@ on) monorepo machinery.
 | Split tests across machines | speed | scale |
 | Cache Docker layers | speed | scale |
 
-For deep GitHub Actions *security* auditing, pair pipewright with
+For deep GitHub Actions *security* auditing, pair ciwright with
 [zizmor](https://github.com/zizmorcore/zizmor) — it's the specialist there.
 Pipewright's lane is the unified score plus one-command autofix PRs for the
 speed and cost wins.

@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from pipewright.detect import detect
+from ciwright.detect import detect
 
 
 def test_detects_uv(make_repo):

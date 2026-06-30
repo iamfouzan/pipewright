@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
-from pipewright.detect import detect
-from pipewright.rules import analyze
+from ciwright.detect import detect
+from ciwright.rules import analyze
 
 # A workflow that does everything the slow way.
 SLOW_WORKFLOW = """\

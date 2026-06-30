@@ -1,9 +1,9 @@
 """The command-line interface.
 
 Commands:
-    pipewright detect [PATH]    show what pipewright sees in a repo
-    pipewright analyze [PATH]   report tier-relevant CI improvements (read-only)
-    pipewright fix [PATH]       preview, or --apply the fixes as a pull request
+    ciwright detect [PATH]    show what ciwright sees in a repo
+    ciwright analyze [PATH]   report tier-relevant CI improvements (read-only)
+    ciwright fix [PATH]       preview, or --apply the fixes as a pull request
 """
 
 from __future__ import annotations
@@ -13,12 +13,12 @@ from typing import Optional
 
 import typer
 
-from pipewright import __version__
-from pipewright.apply import apply_patch
-from pipewright.detect import detect as detect_project
-from pipewright.patch import build_patch
-from pipewright.profile import profile, select_visible
-from pipewright.report import (
+from ciwright import __version__
+from ciwright.apply import apply_patch
+from ciwright.detect import detect as detect_project
+from ciwright.patch import build_patch
+from ciwright.profile import profile, select_visible
+from ciwright.report import (
     render_analysis,
     render_apply,
     render_detect,
@@ -26,9 +26,9 @@ from pipewright.report import (
     render_score,
     render_usage,
 )
-from pipewright.rules import analyze as analyze_project
-from pipewright.score import compute_score
-from pipewright.usage import (
+from ciwright.rules import analyze as analyze_project
+from ciwright.score import compute_score
+from ciwright.usage import (
     estimate_savings,
     load_runs_from_file,
     parse_runs,
@@ -46,7 +46,7 @@ _PATH_ARG = typer.Argument(Path("."), help="Path to the repository (default: cur
 
 def _version_callback(value: bool) -> None:
     if value:
-        typer.echo(f"pipewright {__version__}")
+        typer.echo(f"ciwright {__version__}")
         raise typer.Exit()
 
 
@@ -60,7 +60,7 @@ def _root(
         help="Show the version and exit.",
     ),
 ) -> None:
-    """pipewright — a friendly advisor for your CI pipelines."""
+    """ciwright — a friendly advisor for your CI pipelines."""
 
 
 def _scan(path: Path):
@@ -111,7 +111,7 @@ def _fetch_runs_via_gh(repo: str, days: int):
 
 @app.command()
 def detect(path: Path = _PATH_ARG) -> None:
-    """Show what pipewright sees in this project."""
+    """Show what ciwright sees in this project."""
     render_detect(detect_project(path))
 
 

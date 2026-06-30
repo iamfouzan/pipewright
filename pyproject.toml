@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pipewright"
+name = "ciwright"
 version = "1.2.0"
 description = "Keep your CI pipelines fast, cheap, secure, and reliable — and fix them with a PR."
 readme = "README.md"
@@ -35,15 +35,15 @@ dependencies = [
 dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]
-pipewright = "pipewright.cli:main"
-pw = "pipewright.cli:main"
+ciwright = "ciwright.cli:main"
+pw = "ciwright.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/iamfouzan/pipewright"
-Issues = "https://github.com/iamfouzan/pipewright/issues"
+Homepage = "https://github.com/iamfouzan/ciwright"
+Issues = "https://github.com/iamfouzan/ciwright/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pipewright"]
+packages = ["src/ciwright"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

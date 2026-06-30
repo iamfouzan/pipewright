@@ -9,11 +9,11 @@ from rich.panel import Panel
 from rich.table import Table
 from rich.text import Text
 
-from pipewright.apply import ApplyOutcome
-from pipewright.models import CATEGORIES, IMPACT_ORDER, Finding, ProjectInfo, Tier
-from pipewright.patch import PatchResult
-from pipewright.score import ScoreCard, compute_score
-from pipewright.usage import Estimate, UsageStats
+from ciwright.apply import ApplyOutcome
+from ciwright.models import CATEGORIES, IMPACT_ORDER, Finding, ProjectInfo, Tier
+from ciwright.patch import PatchResult
+from ciwright.score import ScoreCard, compute_score
+from ciwright.usage import Estimate, UsageStats
 
 console = Console()
 
@@ -131,7 +131,7 @@ def render_detect(info: ProjectInfo) -> None:
     body.append(f"{info.test_runner or 'unknown'}\n")
     body.append("GitHub Actions   ", style="bold")
     body.append(f"{len(info.workflows)} workflow file(s)")
-    console.print(Panel(body, title="pipewright · project", expand=False))
+    console.print(Panel(body, title="ciwright · project", expand=False))
 
 
 def render_analysis(
@@ -146,7 +146,7 @@ def render_analysis(
     if not info.has_github_actions:
         console.print(
             "[yellow]No GitHub Actions workflows found — nothing to analyze yet.[/]\n"
-            "[dim]Add a workflow under .github/workflows/ and run pipewright again.[/]"
+            "[dim]Add a workflow under .github/workflows/ and run ciwright again.[/]"
         )
         return
 

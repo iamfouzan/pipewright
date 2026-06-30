@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from pipewright.models import CATEGORIES, Finding
+from ciwright.models import CATEGORIES, Finding
 
 
 @dataclass

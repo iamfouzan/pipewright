@@ -1,4 +1,4 @@
-from pipewright.cli import app
+from ciwright.cli import app
 
 if __name__ == "__main__":
     app()

@@ -9,8 +9,8 @@ from __future__ import annotations
 
 import re
 
-from pipewright.models import Finding, ProjectInfo, Tier
-from pipewright.workflows import (
+from ciwright.models import Finding, ProjectInfo, Tier
+from ciwright.workflows import (
     LoadedWorkflow,
     jobs_of,
     load_workflows,

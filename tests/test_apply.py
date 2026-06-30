@@ -12,10 +12,10 @@ from pathlib import Path
 
 import pytest
 
-from pipewright.apply import apply_patch, current_branch
-from pipewright.detect import detect
-from pipewright.patch import build_patch
-from pipewright.rules import analyze
+from ciwright.apply import apply_patch, current_branch
+from ciwright.detect import detect
+from ciwright.patch import build_patch
+from ciwright.rules import analyze
 
 SLOW = """\
 name: CI
@@ -149,10 +149,10 @@ def test_applying_twice_is_idempotent(git_repo):
 def test_branch_name_is_unique(git_repo):
     repo = git_repo(SLOW)
     base = current_branch(repo)
-    _git(["branch", "pipewright/ci-tuneup"], repo)  # squat the default name
+    _git(["branch", "ciwright/ci-tuneup"], repo)  # squat the default name
 
     outcome = apply_patch(_result(repo), push=False, open_pr=False, branch=None)
     assert outcome.ok
-    assert outcome.branch == "pipewright/ci-tuneup-2"
+    assert outcome.branch == "ciwright/ci-tuneup-2"
 
     _git(["checkout", base], repo)

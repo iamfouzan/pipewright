@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from pipewright.models import Finding
+from ciwright.models import Finding
 
 
 @dataclass

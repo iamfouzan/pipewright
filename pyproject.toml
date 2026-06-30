@@ -9,7 +9,7 @@ description = "Keep your CI pipelines fast, cheap, secure, and reliable — and 
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "Your Name" }]
+authors = [{ name = "Muhammad Fouzan" }]
 keywords = [
     "ci",
     "github-actions",
@@ -36,7 +36,7 @@ dev = ["pytest>=8", "ruff>=0.5"]
 
 [project.scripts]
 ciwright = "ciwright.cli:main"
-pw = "ciwright.cli:main"
+cw = "ciwright.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/iamfouzan/ciwright"
